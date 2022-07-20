@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Table</h2>
+
+  <div class="row">
+    <div class="col dt-responsive">
+      <table class="pichincha-table" cdk-table [dataSource]="dataSource">
+        <!-- Position Column -->
+        <ng-container cdkColumnDef="id" [sticky]="true">
+          <th cdk-header-cell *cdkHeaderCellDef> No </th>
+          <td cdk-cell *cdkCellDef="let element" > {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container cdkColumnDef="name">
+          <th cdk-header-cell *cdkHeaderCellDef> name </th>
+          <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container cdkColumnDef="lastName">
+          <th cdk-header-cell *cdkHeaderCellDef> lastName </th>
+          <td cdk-cell *cdkCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container cdkColumnDef="age">
+          <th cdk-header-cell *cdkHeaderCellDef> age </th>
+          <td cdk-cell *cdkCellDef="let element"> {{element.age}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container cdkColumnDef="email">
+          <th cdk-header-cell *cdkHeaderCellDef> email </th>
+          <td cdk-cell *cdkCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container cdkColumnDef="birthdate">
+          <th cdk-header-cell *cdkHeaderCellDef> birthdate </th>
+          <td cdk-cell *cdkCellDef="let element"> {{element.birthdate | date: 'YYYY-MM'}} </td>
+        </ng-container>
+
+        <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+        <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </div>
+  </div>
+</div>
