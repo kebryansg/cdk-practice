@@ -4,12 +4,14 @@ import {DialogModule as DialogCdkModule} from '@angular/cdk/dialog';
 import {DialogRoutingModule} from './dialog-routing.module';
 import {DialogComponent} from './dialog.component';
 import {ModalExampleComponent} from './modal-example/modal-example.component';
+import { PhoneInputDirective } from './directives/phone-input.directive';
 
 
 @NgModule({
   declarations: [
     DialogComponent,
-    ModalExampleComponent
+    ModalExampleComponent,
+    PhoneInputDirective
   ],
   imports: [
     CommonModule,
