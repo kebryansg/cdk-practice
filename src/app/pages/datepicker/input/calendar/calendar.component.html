@@ -1,13 +1,11 @@
 <section>
   <div class="navigate">
-    <button>
-      <
+    <button prev (click)="clickPrev()">
     </button>
-    <button (click)="changeView()">
+    <button class="title" (click)="changeView()">
       {{ label }}
     </button>
-    <button>
-      >
+    <button next (click)="clickNext()">
     </button>
   </div>
 
@@ -30,7 +28,9 @@
 
   </ng-container>
 
-  <div class="options"></div>
+  <div class="options">
+
+  </div>
 </section>
 
 <ng-template #daysCalendar>
@@ -41,7 +41,7 @@
         {{ dayName }}
       </li>
       <li *ngFor="let day of days; let i = index; let first = first"
-          [ngClass]=" first? firstDay :'' ">
+          [ngClass]=" first? firstDay : '' ">
         {{ day }}
       </li>
     </ol>

@@ -1,9 +1,16 @@
 section {
-  max-width: 220px;
-  padding: 3px;
+  width: 290px;
+  padding: 10px;
   text-align: center;
-  outline: blue 1px solid;
-  border-radius: 5px;
+  //border-radius: 5px;
+  border-radius: 0;
+
+
+  border: 1px solid #eaeaea;
+  box-shadow: 0 0 5px 0rgba(0,0,0,.4);
+  max-height: 500px;
+
+
 }
 
 .navigate {
@@ -11,6 +18,10 @@ section {
   height: 30px;
   display: grid;
   grid-template-columns: 20px auto 20px;
+
+  .title {
+    font-size: 17px;
+  }
 
   button {
     border: none;
@@ -21,6 +32,20 @@ section {
     background-color: #ffffff;
   }
 
+  button[prev],button[next] {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 16px;
+  }
+
+  button[next]::after {
+    content: "\003E";
+  }
+
+  button[prev]::after {
+    content: "\003C";
+  }
+
 }
 
 .body-calendar {
@@ -28,6 +53,14 @@ section {
 
   ol {
     grid-template-columns: repeat(7, 1fr);
+
+    li {
+      font-size: 12px;
+      font-weight: 500;
+      height: 30px;
+      line-height: 30px;
+      width: 30px;
+    }
   }
 }
 
@@ -37,6 +70,10 @@ section {
 
     li {
       text-align: center;
+      font-weight: normal;
+      height: 45px;
+      line-height: 45px;
+      width: 45px;
     }
   }
 }
@@ -48,8 +85,20 @@ ol {
   padding: 0;
 
   li {
-    text-align: right;
+    text-align: center;
     cursor: pointer;
+
+    &:hover {
+      background-color: #eaeaea;
+    }
+
+    &.active {
+      background: #b7e0ff;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      color: #333;
+    }
   }
 
 }
@@ -64,21 +113,27 @@ ol {
   &-1 {
     grid-column-start: 1;
   }
+
   &-2 {
     grid-column-start: 2;
   }
+
   &-3 {
     grid-column-start: 3;
   }
+
   &-4 {
     grid-column-start: 4;
   }
+
   &-5 {
     grid-column-start: 5;
   }
+
   &-6 {
     grid-column-start: 6;
   }
+
   &-0 {
     grid-column-start: 7;
   }

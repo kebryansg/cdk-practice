@@ -1,4 +1,9 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+interface YearDecade {
+  from: number,
+  to: number
+}
 
 @Component({
   selector: 'app-calendar',
@@ -38,9 +43,8 @@ export class CalendarComponent implements OnInit {
 
   stateView: 'year' | 'month' | 'day' = 'day'
   dateNow: Date = new Date()
-  initYearDecade!: { from: number, to: number }
+  initYearDecade!: YearDecade
 
-  content!: TemplateRef<any>
 
   constructor() {
     this.yearSelect = this.dateNow.getFullYear()
@@ -91,6 +95,59 @@ export class CalendarComponent implements OnInit {
   clickItemYear(year: number) {
     this.yearSelect = year
     this.stateView = 'month'
+  }
+
+  clickPrev() {
+    if (this.stateView == 'day') {
+      // Move Month
+      const prevYear = (this.monthSelect - 1) < 0
+      this.monthSelect = prevYear ? 11 : this.monthSelect - 1
+      this.yearSelect -= prevYear ? 1 : 0
+      this.generateDaysByMonthYear(this.yearSelect, this.monthSelect)
+    }
+    if (this.stateView == 'month') {
+      // Move Year
+      this.yearSelect -= 1
+    }
+    if (this.stateView == 'year') {
+      // Move Year Decade
+      const {from, to} = this.initYearDecade
+      this.initYearDecade = {
+        from: from - 10,
+        to: to - 10
+      }
+      this.generateYears(this.initYearDecade.from)
+    }
+  }
+
+  clickNext() {
+    if (this.stateView == 'day') {
+      // Move Month
+      const nextYear = (this.monthSelect + 1) > 11
+      this.monthSelect = nextYear ? 0 : this.monthSelect + 1
+      this.yearSelect += nextYear ? 1 : 0
+      this.generateDaysByMonthYear(this.yearSelect, this.monthSelect)
+    }
+
+    if (this.stateView == 'month') {
+      // Move Year
+      this.yearSelect += 1
+    }
+
+    if (this.stateView == 'year') {
+      // Move Year Decade
+      const {from, to} = this.initYearDecade
+      this.initYearDecade = {
+        from: from + 10,
+        to: to + 10
+      }
+      this.generateYears(this.initYearDecade.from)
+    }
+
+  }
+
+  get isToday() {
+    return this.dateNow.getDate()
   }
 
   get label() {
