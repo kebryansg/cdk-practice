@@ -27,10 +27,13 @@
         "src/app/*"
       ],
       "@pages/*": [
-        "src/app/pages/accordion/*"
+        "src/app/pages/*"
       ],
       "@dialog/*": [
         "src/app/pages/dialog/*"
+      ],
+      "@accordion/*": [
+        "src/app/pages/accordion/*"
       ],
       "@drag/*": [
         "src/app/pages/drag-and-drop/*"
