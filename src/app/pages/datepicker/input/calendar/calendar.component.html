@@ -1,0 +1,71 @@
+<section>
+  <div class="navigate">
+    <button>
+      <
+    </button>
+    <button (click)="changeView()">
+      {{ label }}
+    </button>
+    <button>
+      >
+    </button>
+  </div>
+
+  <ng-container [ngSwitch]="stateView">
+    <ng-container *ngSwitchCase="'month'">
+      <ng-container [ngTemplateOutlet]="mothYear">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'day'">
+      <ng-container [ngTemplateOutlet]="daysCalendar">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'year'">
+      <ng-container [ngTemplateOutlet]="yearCalendar">
+      </ng-container>
+    </ng-container>
+
+
+  </ng-container>
+
+  <div class="options"></div>
+</section>
+
+<ng-template #daysCalendar>
+  <div class="body-calendar">
+    <ol>
+      <li *ngFor="let dayName of daysName"
+          class="day-name">
+        {{ dayName }}
+      </li>
+      <li *ngFor="let day of days; let i = index; let first = first"
+          [ngClass]=" first? firstDay :'' ">
+        {{ day }}
+      </li>
+    </ol>
+  </div>
+</ng-template>
+
+<ng-template #mothYear>
+  <div class="body-month">
+    <ol>
+      <li *ngFor="let month of monthName; let i = index"
+          (click)="clickItemMonth(i)">
+        {{month | uppercase}}
+      </li>
+    </ol>
+  </div>
+</ng-template>
+
+<ng-template #yearCalendar>
+  <div class="body-month">
+    <ol>
+      <li *ngFor="let year of years; let i = index"
+          (click)="clickItemYear(year)">
+        {{year}}
+      </li>
+    </ol>
+  </div>
+</ng-template>

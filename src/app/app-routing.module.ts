@@ -18,10 +18,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/dialog/dialog.module').then(module => module.DialogModule)
   },
   {
+    path: 'datepicker',
+    title: 'Datepicker',
+    loadChildren: () => import('./pages/datepicker/datepicker.module').then(module => module.DatepickerModule)
+  },
+  /*{
     path: 'table',
     title: 'Table',
     loadChildren: () => import('./pages/table/table.module').then(module => module.TableModule)
-  }
+  }*/
 ];
 
 @NgModule({
