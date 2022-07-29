@@ -1,10 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {AccordionComponent} from "@accordion/accordion.component";
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: AccordionComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AccordionRoutingModule { }
+export class AccordionRoutingModule {
+}
