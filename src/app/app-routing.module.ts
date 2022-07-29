@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    // redirectTo: 'table',
     redirectTo: 'drag-and-drop',
     pathMatch: 'full'
   },
@@ -18,11 +17,6 @@ const routes: Routes = [
     title: 'Dialog',
     loadChildren: () => import('@dialog/dialog.module').then(module => module.DialogModule)
   },
-  // {
-  //   path: 'table',
-  //   title: 'Table',
-  //   loadChildren: () => import('./pages/table/table.module').then(module => module.TableModule)
-  // },
   {
     path: 'drag-and-drop',
     loadChildren: () => import('@drag/drag-and-drop.module').then((m) => m.DragAndDropModule),
@@ -33,5 +27,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

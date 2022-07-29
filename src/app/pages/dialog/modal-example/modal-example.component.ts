@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DialogRef} from "@angular/cdk/dialog";
 
 @Component({
   selector: 'app-modal-example',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalExampleComponent implements OnInit {
 
-  constructor() { }
+  open: boolean = true
+
+  constructor(public dialogRef: DialogRef<string>,) {
+  }
 
   ngOnInit(): void {
+  }
+
+  close(){
+    this.dialogRef.close()
   }
 
 }
