@@ -1,14 +1,29 @@
-<app-tmp-modal [title]="'My Custom'"
+<app-tmp-modal [title]="'Title Modal Custom'"
                (close)="close()">
   <div class="tmp-modal-body">
-    <h1>My Modal</h1>
+    <h1>
+      My Modal
+    </h1>
     <p>
       Data
     </p>
   </div>
 
-  <div class="tmp-modal-footer">
+  <div class="tmp-modal-footer d-flex gap-10">
+    <pichincha-button (click)="close()"
+                      size="large"
+                      id="btnModal"
+                      color="secondary">
+      Cancelar
+    </pichincha-button>
 
+
+    <pichincha-button (click)="close()"
+                      size="large"
+                      id="btnModalDs"
+                      color="primary">
+      Aceptar
+    </pichincha-button>
   </div>
 
 </app-tmp-modal>
