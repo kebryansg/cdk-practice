@@ -1,41 +1,36 @@
+<a href="/">anterior</a> &nbsp;
+<a href="/drag-and-drop/horizontal">siguiente</a>
+<br/>
+<h1>Componente Drag & Drop - Angular CDK</h1>
+<h2>Rápido, Fácil y Divertido</h2>
 <div>
     <div>
-        <div class="example-box" cdkDrag>
-            Drag me around
-        </div>
-        <div class="example-box" cdkDrag>
-            Drag me around
+        <div class="example-box posicionInicialNota" cdkDrag>
+            <span>
+                <h3>Nota Flotante:</h3>
+                <p>Cada pagina es un ejercicio, utilice los botones de anterior y siguiennte para avanzar de pagina </p>
+
+            </span>
         </div>
     </div>
     <div class="example-boundary">
         <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
-            I can only be dragged within the dotted container
+            <img src="assets/rmp4.png" alt="" class="img-rmp">
+
+        </div>
+        <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+            <img src="assets/rmp2.png" alt="" class="img-rmp">
+
+        </div>
+        <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+            <img src="assets/rmp3.png" alt="" class="img-rmp">
+
+        </div>
+        <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+            <img src="assets/rmp1.png" alt="" class="img-rmp">
+
         </div>
     </div>
 
-    <div cdkDropListGroup>
-        <div class="example-container">
-            <h2>To do</h2>
 
-            <div
-                    cdkDropList
-                    [cdkDropListData]="todo"
-                    class="example-list"
-                    (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-            </div>
-        </div>
-
-        <div class="example-container">
-            <h2>Done</h2>
-
-            <div
-                    cdkDropList
-                    [cdkDropListData]="done"
-                    class="example-list"
-                    (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-            </div>
-        </div>
-    </div>
 </div>
