@@ -17,16 +17,10 @@ const routes: Routes = [
     title: 'Dialog',
     loadChildren: () => import('./pages/dialog/dialog.module').then(module => module.DialogModule)
   },
-  {
-    path: 'table',
-    title: 'Table',
-    loadChildren: () => import('./pages/table/table.module').then(module => module.TableModule)
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

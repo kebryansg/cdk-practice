@@ -1,0 +1,12 @@
+<pichincha-modal secondary-button-label="Cancelar"
+                 primary-button-label="Confirmar"
+                 size="md"
+                 border-header
+                 open="{{ open }}"
+                 (clickPrimaryButton)="handlePrimary($event)"
+                 (clickSecondaryButton)="handleSecondary($event)">
+  <h1>My Modal</h1>
+  <p>
+    Data
+  </p>
+</pichincha-modal>

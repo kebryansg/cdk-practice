@@ -1,0 +1,35 @@
+<div class="basic modal" style="display:block !important;" role="dialog">
+
+  <div class="modal-dialog modal-dialog-centered"
+       role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <pichincha-typography
+          variant="bodyText"
+          color="blue"
+          weight="normal"
+          weight_color="500"
+          align="inherit">
+          {{title}}
+        </pichincha-typography>
+        <button id="" type="button" class="close" aria-label="Close"
+                (click)="close.emit()">
+          &times;
+        </button>
+      </div>
+
+      <!-- <Load Content -->
+      <div class="modal-body">
+        <ng-content select=".tmp-modal-body"></ng-content>
+      </div>
+
+      <div class="modal-footer justify-content-around row w-100  m-0">
+        <ng-content select=".tmp-modal-footer"></ng-content>
+      </div>
+
+
+    </div>
+  </div>
+</div>
