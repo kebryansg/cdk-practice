@@ -1,0 +1,9 @@
+<a href="/drag-and-drop/horizontal">anterior</a> &nbsp;
+<a href="/drag-and-drop/kanban">siguiente</a>
+<br/>
+<h1>Ordene la frase correctamente</h1>
+<div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let timePeriod of timePeriods" cdkDrag>{{timePeriod}}</div>
+</div>
+<br/>
+<button (click)="validar()">Validar</button>

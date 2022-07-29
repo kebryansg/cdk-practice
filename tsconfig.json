@@ -21,8 +21,31 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@pages/*": [
+        "src/app/pages/*"
+      ],
+      "@dialog/*": [
+        "src/app/pages/dialog/*"
+      ],
+      "@accordion/*": [
+        "src/app/pages/accordion/*"
+      ],
+      "@drag/*": [
+        "src/app/pages/drag-and-drop/*"
+      ],
+      "@env/*": [
+        "environments/*"
+      ]
+    }
   },
+  "exclude": [
+    "node_modules"
+  ],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
