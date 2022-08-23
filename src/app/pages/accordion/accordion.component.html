@@ -4,7 +4,7 @@
 
   <cdk-accordion class="example-accordion mt-5">
     <cdk-accordion-item
-      *ngFor="let item of country$ | async; let index = index;"
+      *ngFor="let item of (country$ | async); let index = index; trackBy : trackByItems"
       #accordionItem="cdkAccordionItem"
       class="example-accordion-item"
       role="button"
@@ -53,6 +53,7 @@
             <ng-container *ngIf="countryFlag$ | async as countryFlag">
               <section class="col">
                 <img [src]="countryFlag"
+                     flag
                      alt="Flag Country">
               </section>
             </ng-container>
