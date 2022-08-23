@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {FaqService} from "@accordion/services/faq.service";
-import {map, Observable, pluck} from 'rxjs';
-import {CountryFlag} from '@accordion/interfaces/country.interface';
+import {Observable} from 'rxjs';
+import {Country} from '@accordion/interfaces/country.interface';
 
 @Component({
   selector: 'app-accordion',
@@ -23,6 +23,10 @@ export class AccordionComponent implements OnInit {
 
   openItem(code: string) {
     this.countryFlag$ = this.faqService.getFlagByCodeCountry(code)
+  }
+
+  trackByItems(index: number, item: Country) {
+    return item.id
   }
 
 }
