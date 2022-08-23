@@ -1,9 +1,9 @@
 <a href="/drag-and-drop/">anterior</a> &nbsp;
 <a href="/drag-and-drop/exercise">siguiente</a>
 <br/>
-<h1>Clasifique los animales según su tipo</h1>
-<h3>Lista Horizontal</h3>
-<div cdkDropListGroup>
+<h1>Ejemplo de Lista Horizontal</h1>
+<br> <h2>Clasifique los animales según su tipo</h2>
+<div cdkDropListGroup style="padding-left: 20px">
     <div class="example-container">
         <h2>Animales Vertebrados</h2>
 
@@ -11,8 +11,9 @@
                 cdkDropList
                 [cdkDropListData]="todo"
                 class="example-list"
+                style="padding-left: 20px"
                 (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+            <div class="example-box image" *ngFor="let item of todo" cdkDrag>{{item}}</div>
         </div>
     </div>
 
@@ -23,8 +24,10 @@
                 cdkDropList
                 [cdkDropListData]="done"
                 class="example-list"
-                (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                (cdkDropListDropped)="drop($event)"
+        style="padding-left: 20px"
+        >
+            <div class="example-box image" *ngFor="let item of done" cdkDrag>{{item}}</div>
         </div>
     </div>
 </div>
