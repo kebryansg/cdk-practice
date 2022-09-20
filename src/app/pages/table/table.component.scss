@@ -6,15 +6,16 @@ th {
   text-align: left;
 }*/
 
-.pichincha-table {
+.dt-pichincha-table {
   border-collapse: collapse;
 
   &-header {
-
+    border-bottom: 1px solid rgb(222, 227, 237);
     vertical-align: middle;
     text-align: start;
     //padding: 18px 16px;
     padding: 1.3rem .75rem;
+    background-color: #fff;
 
     font-family: 'prelo-medium', serif;
     color: #2c2c30;
@@ -27,11 +28,43 @@ th {
     }
   }
 
+  &-row {
+    border-bottom: 1px solid rgb(222, 227, 237);
+
+    &:last-child {
+      //border-bottom: 0;
+    }
+
+    td {
+      padding: 1.3rem .75rem;
+      font-family: 'prelo-medium', serif;
+
+      /* Celda se ajusta al contenido */
+      &:not(td[data-actions]) {
+        white-space: nowrap;
+        width: 1%;
+      }
+
+      &[data-actions] {
+        /* Code Styles column Actions */
+      }
+
+    }
+
+    &:nth-child(even) {
+      background-color: var(--darkGrayishBlue50);
+    }
+
+    &:hover {
+      background-color: var(--darkGrayishBlue50);
+    }
+  }
+
 }
 
-thead > tr {
-  border-bottom: 1px solid rgb(222, 227, 237);
-}
+//thead > tr {
+//  border-bottom: 1px solid rgb(222, 227, 237);
+//}
 
 tbody > tr {
   border-bottom: 1px solid rgb(222, 227, 237);
@@ -107,3 +140,8 @@ tbody > tr {
   font-family: 'prelo-medium', serif;
 }
 
+.example-container {
+  height: 400px;
+  max-width: 100%;
+  overflow: auto;
+}
